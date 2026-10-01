@@ -35,13 +35,13 @@ A confident wrong answer is the worst failure.
 
 ## Foundry agent anatomy
 
-| Term             | Meaning                                              | Older term |
-| ---------------- | ---------------------------------------------------- | ---------- |
-| Project          | Azure resource an agent and its model deployment belong to | same |
-| Model deployment | language model instance the agent calls              | same       |
-| Agent            | name, instructions, and attached tools               | same       |
-| Conversation     | ordered messages of one exchange                     | thread     |
-| Response         | one execution of the agent on the conversation       | run        |
+| Term             | Meaning                                                    | Older term |
+| ---------------- | ---------------------------------------------------------- | ---------- |
+| Project          | Azure resource an agent and its model deployment belong to | same       |
+| Model deployment | language model instance the agent calls                    | same       |
+| Agent            | name, instructions, and attached tools                     | same       |
+| Conversation     | ordered messages of one exchange                           | thread     |
+| Response         | one execution of the agent on the conversation             | run        |
 
 ## From portal to first answer
 
@@ -55,20 +55,20 @@ A confident wrong answer is the worst failure.
 
 ## What instructions can and cannot fix
 
-| Instructions can fix                      | Instructions cannot fix                      |
-| ----------------------------------------- | -------------------------------------------- |
-| tone and register                         | facts the model never saw                    |
-| scope: what the agent will and will not do | company-specific rules and numbers          |
-| output format                             | information newer than its training          |
-| boundaries and fallbacks                  |                                              |
+| Instructions can fix                       | Instructions cannot fix             |
+| ------------------------------------------ | ----------------------------------- |
+| tone and register                          | facts the model never saw           |
+| scope: what the agent will and will not do | company-specific rules and numbers  |
+| output format                              | information newer than its training |
+| boundaries and fallbacks                   |                                     |
 
 ## Method Steps 1 to 3: generate the instructions
 
-| Step | Assistant            | Result                                                         |
-| ---- | -------------------- | -------------------------------------------------------------- |
-| 1    | Problem-Solver       | use-case canvas and top-1 recommendation, no solution yet      |
-| 2    | Solution Architect   | required tools, agent split, handover package                  |
-| 3    | Prompt Generator     | finished instructions, improved against two adversarial questions |
+| Step | Assistant          | Result                                                            |
+| ---- | ------------------ | ----------------------------------------------------------------- |
+| 1    | Problem-Solver     | use-case canvas and top-1 recommendation, no solution yet         |
+| 2    | Solution Architect | required tools, agent split, handover package                     |
+| 3    | Prompt Generator   | finished instructions, improved against two adversarial questions |
 
 - Each assistant receives the previous output
 - Prompts: `../../project/assistants/`; result for TravelDesk: `../../project/traveldesk-instructions.md`
@@ -76,12 +76,12 @@ A confident wrong answer is the worst failure.
 
 Anatomy of generated instructions:
 
-| Section       | Content                                                         |
-| ------------- | --------------------------------------------------------------- |
-| Role          | who the agent is and who it serves                              |
-| Scope         | what it answers and what it refuses                             |
-| Rules         | how it must behave: cite sources, never guess                   |
-| Output format | the shape of every answer                                       |
+| Section       | Content                                                            |
+| ------------- | ------------------------------------------------------------------ |
+| Role          | who the agent is and who it serves                                 |
+| Scope         | what it answers and what it refuses                                |
+| Rules         | how it must behave: cite sources, never guess                      |
+| Output format | the shape of every answer                                          |
 | Fallback      | what it does when the answer is unavailable or a human must decide |
 
 ## Testing deliberately

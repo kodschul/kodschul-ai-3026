@@ -12,13 +12,13 @@
 
 ## Part A: Generic
 
-| #  | Situation                                                                              |
-| -- | -------------------------------------------------------------------------------------- |
-| A1 | A report is drafted, then fact-checked, then formatted; each step needs the previous output |
-| A2 | Legal, financial, and market analyses of the same contract are needed independently    |
-| A3 | A reviewer, an editor, and a designer discuss a draft with the user until all agree    |
-| A4 | A general support agent must hand a billing question to a billing specialist           |
-| A5 | Answer employee questions from one five-page FAQ document                              |
+| #   | Situation                                                                                   |
+| --- | ------------------------------------------------------------------------------------------- |
+| A1  | A report is drafted, then fact-checked, then formatted; each step needs the previous output |
+| A2  | Legal, financial, and market analyses of the same contract are needed independently         |
+| A3  | A reviewer, an editor, and a designer discuss a draft with the user until all agree         |
+| A4  | A general support agent must hand a billing question to a billing specialist                |
+| A5  | Answer employee questions from one five-page FAQ document                                   |
 
 ## Tasks
 

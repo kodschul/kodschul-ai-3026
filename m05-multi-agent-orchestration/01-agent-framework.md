@@ -7,12 +7,12 @@
 
 ## Foundry-side orchestration versus the Agent Framework
 
-| Aspect             | Orchestration inside Foundry (today)        | Microsoft Agent Framework                      |
-| ------------------ | ------------------------------------------- | ---------------------------------------------- |
-| Where it is defined | Foundry configuration and the application | code-first SDK                                 |
-| Patterns           | handoff between agents                      | orchestration patterns as code                 |
-| Hosting            | Foundry Agent Service                       | own host, or as a hosted agent in Foundry      |
-| Fits               | TravelDesk: two agents, one handoff         | complex flows, several patterns combined       |
+| Aspect              | Orchestration inside Foundry (today)      | Microsoft Agent Framework                 |
+| ------------------- | ----------------------------------------- | ----------------------------------------- |
+| Where it is defined | Foundry configuration and the application | code-first SDK                            |
+| Patterns            | handoff between agents                    | orchestration patterns as code            |
+| Hosting             | Foundry Agent Service                     | own host, or as a hosted agent in Foundry |
+| Fits                | TravelDesk: two agents, one handoff       | complex flows, several patterns combined  |
 
 ## When to leave the service
 
@@ -22,11 +22,11 @@
 
 ## Handoff options for agent-to-agent calls
 
-| Option                          | Note                                                       |
-| ------------------------------- | ---------------------------------------------------------- |
-| handoff in application code     | used in Lab 5.1; works with any service generation        |
-| connected agents or A2A tool    | available options depend on the Foundry service generation; verify |
-| Foundry workflows               | visual; see `02-workflows-power-fx.md`                     |
+| Option                       | Note                                                               |
+| ---------------------------- | ------------------------------------------------------------------ |
+| handoff in application code  | used in Lab 5.1; works with any service generation                 |
+| connected agents or A2A tool | available options depend on the Foundry service generation; verify |
+| Foundry workflows            | visual; see `02-workflows-power-fx.md`                             |
 
 > **Rule of thumb:** Migrate when a pattern cannot be expressed, or when the orchestration
 > itself needs version control. Not earlier.

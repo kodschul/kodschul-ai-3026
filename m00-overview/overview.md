@@ -19,30 +19,30 @@
 
 ## Agenda
 
-| Time        | Block                                                        |
-| ----------- | ------------------------------------------------------------ |
-| 09:00-09:20 | Kickoff: introductions, goals, scope, the method             |
-| 09:20-09:30 | Environment preflight                                        |
-| 09:30-10:30 | Module 1: Fundamentals and options (Lab 1.1)                 |
-| 10:30-10:45 | Break                                                        |
-| 10:45-12:15 | Module 2: First agent and grounding (Labs 2.1, 2.2)          |
-| 12:15-13:15 | Lunch                                                        |
-| 13:15-14:45 | Module 3: Agents in code (Lab 3.1), Module 4: Lab 4.1        |
-| 14:45-15:00 | Break                                                        |
-| 15:00-16:15 | Module 4: MCP (Lab 4.2), Module 5: Multi-agent (Lab 5.1)     |
-| 16:15-16:30 | Break                                                        |
+| Time        | Block                                                             |
+| ----------- | ----------------------------------------------------------------- |
+| 09:00-09:20 | Kickoff: introductions, goals, scope, the method                  |
+| 09:20-09:30 | Environment preflight                                             |
+| 09:30-10:30 | Module 1: Fundamentals and options (Lab 1.1)                      |
+| 10:30-10:45 | Break                                                             |
+| 10:45-12:15 | Module 2: First agent and grounding (Labs 2.1, 2.2)               |
+| 12:15-13:15 | Lunch                                                             |
+| 13:15-14:45 | Module 3: Agents in code (Lab 3.1), Module 4: Lab 4.1             |
+| 14:45-15:00 | Break                                                             |
+| 15:00-16:15 | Module 4: MCP (Lab 4.2), Module 5: Multi-agent (Lab 5.1)          |
+| 16:15-16:30 | Break                                                             |
 | 16:30-17:00 | Module 6: Test and guard (Lab 6.1), next steps (Lab 6.2), closing |
 
 ## Modules and labs
 
-| Module                                  | Labs                                                        | Checkpoint: TravelDesk can                               |
-| --------------------------------------- | ----------------------------------------------------------- | -------------------------------------------------------- |
-| `m01-agent-fundamentals-options`        | 1.1 Agents and options                                      | not built yet; Foundry Agent Service chosen with a reason |
-| `m02-first-agent-grounding`             | 2.1 First Foundry agent, 2.2 Grounding and citations        | answer policy questions with traceable citations         |
-| `m03-agent-sdk-vscode`                  | 3.1 Agent in VS Code and the Python SDK                     | run from code with the same grounded answer              |
-| `m04-function-tools-mcp`                | 4.1 Custom function tools, 4.2 MCP tools                    | validate a claim and reach an MCP tool                   |
-| `m05-multi-agent-orchestration`         | 5.1 Connected agents and orchestration                      | separate policy advice from approval decisions           |
-| `m06-evaluation-integration`            | 6.1 Test, guard, human approval, 6.2 Integration and next steps | survive a misuse test; transfer plan written          |
+| Module                           | Labs                                                            | Checkpoint: TravelDesk can                                |
+| -------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------- |
+| `m01-agent-fundamentals-options` | 1.1 Agents and options                                          | not built yet; Foundry Agent Service chosen with a reason |
+| `m02-first-agent-grounding`      | 2.1 First Foundry agent, 2.2 Grounding and citations            | answer policy questions with traceable citations          |
+| `m03-agent-sdk-vscode`           | 3.1 Agent in VS Code and the Python SDK                         | run from code with the same grounded answer               |
+| `m04-function-tools-mcp`         | 4.1 Custom function tools, 4.2 MCP tools                        | validate a claim and reach an MCP tool                    |
+| `m05-multi-agent-orchestration`  | 5.1 Connected agents and orchestration                          | separate policy advice from approval decisions            |
+| `m06-evaluation-integration`     | 6.1 Test, guard, human approval, 6.2 Integration and next steps | survive a misuse test; transfer plan written              |
 
 - Six modules instead of the Kodschul default of three: a compacted one-day course
 - Each lab consists of theory (`-thx`), exercise (`-exc`), and solution (`-sol`)
@@ -57,31 +57,31 @@
 
 ## The method: use AI to build AI
 
-| Step | Name                       | Applied in                |
-| ---- | -------------------------- | ------------------------- |
-| 0    | Know what you are steering | Lab 2.1                   |
-| 1    | Understand the problem     | Lab 1.1                   |
-| 2    | Design the solution        | Labs 4.1, 5.1             |
-| 3    | Generate the instructions  | Lab 2.1                   |
-| 4    | Scaffold the build         | Lab 4.1                   |
-| 5    | Test and iterate           | Lab 6.1                   |
+| Step | Name                       | Applied in    |
+| ---- | -------------------------- | ------------- |
+| 0    | Know what you are steering | Lab 2.1       |
+| 1    | Understand the problem     | Lab 1.1       |
+| 2    | Design the solution        | Labs 4.1, 5.1 |
+| 3    | Generate the instructions  | Lab 2.1       |
+| 4    | Scaffold the build         | Lab 4.1       |
+| 5    | Test and iterate           | Lab 6.1       |
 
 - Each step is demonstrated once, immediately before the matching hands-on step
 - Full method with prompts: `m01-agent-fundamentals-options/02-use-ai-to-build-ai.md`
 
 ## Coverage of the Microsoft learning path
 
-| Microsoft module                                    | Treatment                                 | Where                    |
-| --------------------------------------------------- | ----------------------------------------- | ------------------------ |
-| Develop AI agents with Foundry and VS Code          | hands-on                                  | Labs 1.1, 2.1, 3.1       |
-| Integrate custom tools into your agent              | hands-on                                  | Lab 4.1                  |
-| Integrate MCP tools with Azure AI agents            | hands-on                                  | Lab 4.2                  |
-| Build knowledge-enhanced agents with Foundry IQ     | file grounding hands-on, background segment | Lab 2.2, `m02/01`      |
-| Multi-agent solution, connected agents              | hands-on handoff                          | Lab 5.1                  |
-| Microsoft Agent Framework (build and orchestrate)   | options comparison, background segment    | Lab 1.1, `m05/01`        |
-| Agent-driven workflows                              | background segment                        | `m05/02`                 |
-| Integrate your agent with Microsoft 365             | options comparison, background segment    | Lab 1.1, `m06/01`        |
-| Discover Azure AI agents with A2A                   | background segment                        | `m06/02`                 |
+| Microsoft module                                  | Treatment                                   | Where              |
+| ------------------------------------------------- | ------------------------------------------- | ------------------ |
+| Develop AI agents with Foundry and VS Code        | hands-on                                    | Labs 1.1, 2.1, 3.1 |
+| Integrate custom tools into your agent            | hands-on                                    | Lab 4.1            |
+| Integrate MCP tools with Azure AI agents          | hands-on                                    | Lab 4.2            |
+| Build knowledge-enhanced agents with Foundry IQ   | file grounding hands-on, background segment | Lab 2.2, `m02/01`  |
+| Multi-agent solution, connected agents            | hands-on handoff                            | Lab 5.1            |
+| Microsoft Agent Framework (build and orchestrate) | options comparison, background segment      | Lab 1.1, `m05/01`  |
+| Agent-driven workflows                            | background segment                          | `m05/02`           |
+| Integrate your agent with Microsoft 365           | options comparison, background segment      | Lab 1.1, `m06/01`  |
+| Discover Azure AI agents with A2A                 | background segment                          | `m06/02`           |
 
 ## Working method
 
@@ -108,8 +108,8 @@ today's learning to. Personal prompts may be skipped.
 
 ## Level check
 
-| Question                                                   | Typical answer                                                     |
-| ---------------------------------------------------------- | ------------------------------------------------------------------ |
-| What is an AI agent, in your own words?                    | a model with instructions and tools in a loop that decides the next step |
-| Which AI tools have you used for work, and for what?       | no single right answer; calibrates how much of the primer is needed |
-| Where do AI agents usually go wrong?                       | vague instructions, invented facts, uncalled tools, no testing, no human approval |
+| Question                                             | Typical answer                                                                    |
+| ---------------------------------------------------- | --------------------------------------------------------------------------------- |
+| What is an AI agent, in your own words?              | a model with instructions and tools in a loop that decides the next step          |
+| Which AI tools have you used for work, and for what? | no single right answer; calibrates how much of the primer is needed               |
+| Where do AI agents usually go wrong?                 | vague instructions, invented facts, uncalled tools, no testing, no human approval |

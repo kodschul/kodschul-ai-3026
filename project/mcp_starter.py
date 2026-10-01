@@ -43,7 +43,8 @@ def create_agent(project: AIProjectClient, vector_store_id: str):
 
 def ask_with_mcp(openai, agent, question: str) -> str:
     """Provided: list MCP tools, ask a person to approve each MCP call, run function calls."""
-    agent_ref = {"agent_reference": {"name": agent.name, "type": "agent_reference"}}
+    agent_ref = {"agent_reference": {
+        "name": agent.name, "type": "agent_reference"}}
     response = openai.responses.create(input=question, extra_body=agent_ref)
     while True:
         inputs = []
@@ -52,7 +53,8 @@ def ask_with_mcp(openai, agent, question: str) -> str:
                 print("[mcp tools]", [tool.name for tool in item.tools])
             elif item.type == "mcp_approval_request":
                 print(f"[mcp approval] {item.name}({item.arguments})")
-                approve = input("Approve this call? [y/N] ").strip().lower() == "y"
+                approve = input(
+                    "Approve this call? [y/N] ").strip().lower() == "y"
                 inputs.append(
                     McpApprovalResponse(
                         type="mcp_approval_response",
@@ -79,7 +81,8 @@ def ask_with_mcp(openai, agent, question: str) -> str:
 
 def main() -> None:
     question = " ".join(sys.argv[1:]) or "Which hotel tier is Graz in?"
-    project = AIProjectClient(endpoint=ENDPOINT, credential=DefaultAzureCredential())
+    project = AIProjectClient(
+        endpoint=ENDPOINT, credential=DefaultAzureCredential())
     openai = project.get_openai_client()
     agent = create_agent(project, upload_policy(openai))
     print(f"Agent: {agent.name} (version {agent.version})")

@@ -7,13 +7,13 @@
 - Four short scenarios plus Aurora Logistics' own TravelDesk case
 - Goal: decide per case which Azure option fits, or whether it is an agent problem at all
 
-| #  | Scenario                                                                                          |
-| -- | ------------------------------------------------------------------------------------------------- |
-| S1 | Internal FAQ bot for non-technical HR staff; the HR team wants to maintain the answers themselves |
-| S2 | Nightly job that transforms a CSV export and loads it into a reporting table                       |
-| S3 | Claims assistant for an insurer; a developer team maintains it and wants portal and SDK access     |
-| S4 | Assistant for the sales team that must appear inside Microsoft Teams; developers are available     |
-| S5 | TravelDesk: internal travel and expense assistant for Aurora Logistics (see below)                |
+| #   | Scenario                                                                                          |
+| --- | ------------------------------------------------------------------------------------------------- |
+| S1  | Internal FAQ bot for non-technical HR staff; the HR team wants to maintain the answers themselves |
+| S2  | Nightly job that transforms a CSV export and loads it into a reporting table                      |
+| S3  | Claims assistant for an insurer; a developer team maintains it and wants portal and SDK access    |
+| S4  | Assistant for the sales team that must appear inside Microsoft Teams; developers are available    |
+| S5  | TravelDesk: internal travel and expense assistant for Aurora Logistics (see below)                |
 
 **TravelDesk case (S5):**
 
@@ -33,13 +33,13 @@
 
 ## Decision grid template
 
-| #  | Agent problem? (yes/no, reason) | Azure option | One-line justification (name the axis) |
-| -- | ------------------------------- | ------------ | -------------------------------------- |
-| S1 |                                 |              |                                        |
-| S2 |                                 |              |                                        |
-| S3 |                                 |              |                                        |
-| S4 |                                 |              |                                        |
-| S5 |                                 |              |                                        |
+| #   | Agent problem? (yes/no, reason) | Azure option | One-line justification (name the axis) |
+| --- | ------------------------------- | ------------ | -------------------------------------- |
+| S1  |                                 |              |                                        |
+| S2  |                                 |              |                                        |
+| S3  |                                 |              |                                        |
+| S4  |                                 |              |                                        |
+| S5  |                                 |              |                                        |
 
 ## Checkpoint
 

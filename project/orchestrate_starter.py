@@ -39,7 +39,8 @@ def create_policy_agent(project: AIProjectClient, vector_store_id: str):
 
 def create_approval_agent(project: AIProjectClient):
     """Provided: only the expense tool; no document access."""
-    tools = [tool for tool in build_tools() if tool.name == "check_expense_claim"]
+    tools = [tool for tool in build_tools() if tool.name ==
+             "check_expense_claim"]
     return project.agents.create_version(
         agent_name="traveldesk-approval",
         definition=PromptAgentDefinition(
@@ -55,8 +56,10 @@ def handle(openai, policy_agent, approval_agent, question: str) -> str:
 
 
 def main() -> None:
-    question = " ".join(sys.argv[1:]) or "Hotel in Munich, 3 nights, 540 EUR in total. Will it pass?"
-    project = AIProjectClient(endpoint=ENDPOINT, credential=DefaultAzureCredential())
+    question = " ".join(
+        sys.argv[1:]) or "Hotel in Munich, 3 nights, 540 EUR in total. Will it pass?"
+    project = AIProjectClient(
+        endpoint=ENDPOINT, credential=DefaultAzureCredential())
     openai = project.get_openai_client()
     policy_agent = create_policy_agent(project, upload_policy(openai))
     approval_agent = create_approval_agent(project)

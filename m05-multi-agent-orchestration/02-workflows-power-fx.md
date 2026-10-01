@@ -6,14 +6,14 @@
 
 ## Visual workflow versus code orchestration
 
-| Aspect          | Visual workflow                          | Code orchestration                      |
-| --------------- | ---------------------------------------- | --------------------------------------- |
-| Authoring       | the flow is drawn, not coded             | the flow is written as code             |
-| Agents          | added as steps in the flow               | called from the application             |
-| Logic           | Power Fx expressions for conditions and values | any programming language          |
-| Flexibility     | limited to the available step types      | full flexibility                        |
-| Review          | visual inspection of the flow            | reviewed like any code                  |
-| Owner           | makers or developers                     | developers                              |
+| Aspect      | Visual workflow                                | Code orchestration          |
+| ----------- | ---------------------------------------------- | --------------------------- |
+| Authoring   | the flow is drawn, not coded                   | the flow is written as code |
+| Agents      | added as steps in the flow                     | called from the application |
+| Logic       | Power Fx expressions for conditions and values | any programming language    |
+| Flexibility | limited to the available step types            | full flexibility            |
+| Review      | visual inspection of the flow                  | reviewed like any code      |
+| Owner       | makers or developers                           | developers                  |
 
 ## Power Fx in workflows
 

@@ -49,11 +49,11 @@ python agent_starter.py "What is the hotel limit per night in Munich?"
 
 ### 5. Comparison
 
-| Aspect      | Portal agent                    | Code agent                              |
-| ----------- | ------------------------------- | --------------------------------------- |
-| Answer      | EUR 180, Tier 1, section 1      | same facts; wording and citation format may differ |
-| Definition  | stored in the portal            | instructions and tools in files         |
-| Recreation  | manual                          | run the script                          |
+| Aspect     | Portal agent               | Code agent                                         |
+| ---------- | -------------------------- | -------------------------------------------------- |
+| Answer     | EUR 180, Tier 1, section 1 | same facts; wording and citation format may differ |
+| Definition | stored in the portal       | instructions and tools in files                    |
+| Recreation | manual                     | run the script                                     |
 
 ## Checkpoint
 

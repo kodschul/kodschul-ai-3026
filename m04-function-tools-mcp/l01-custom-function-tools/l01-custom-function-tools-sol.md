@@ -137,7 +137,7 @@ def build_tools() -> list[FunctionTool]:
 
 ## Extension
 
-| Check                           | Typical finding                                                  |
-| ------------------------------- | ---------------------------------------------------------------- |
-| vague docstring                 | the tool is called less reliably or with wrong arguments         |
-| unknown category                | `approved: false`, reason names the unknown category             |
+| Check            | Typical finding                                          |
+| ---------------- | -------------------------------------------------------- |
+| vague docstring  | the tool is called less reliably or with wrong arguments |
+| unknown category | `approved: false`, reason names the unknown category     |

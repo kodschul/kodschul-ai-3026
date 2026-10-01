@@ -32,11 +32,11 @@ Any repeatable multi-step task is a candidate for a skill, such as scaffolding a
 
 ## Portal agent versus code agent
 
-| Portal                                  | Code                                         |
-| --------------------------------------- | -------------------------------------------- |
-| fast to start, visual                   | instructions and tools live in files         |
-| changes are hard to diff or review      | diff, review, and roll back                  |
-| recreating it elsewhere is manual       | same agent recreated in every environment    |
+| Portal                             | Code                                      |
+| ---------------------------------- | ----------------------------------------- |
+| fast to start, visual              | instructions and tools live in files      |
+| changes are hard to diff or review | diff, review, and roll back               |
+| recreating it elsewhere is manual  | same agent recreated in every environment |
 
 ## What runs where
 
@@ -47,10 +47,10 @@ Any repeatable multi-step task is a candidate for a skill, such as scaffolding a
 
 ## Foundry extension in VS Code
 
-| Area              | Use                                              |
-| ----------------- | ------------------------------------------------ |
-| My Resources      | set the Foundry project; browse models, agents, tools, knowledge, evaluations |
-| Developer tools   | create agent, agent inspector, deploy, model playground |
+| Area            | Use                                                                           |
+| --------------- | ----------------------------------------------------------------------------- |
+| My Resources    | set the Foundry project; browse models, agents, tools, knowledge, evaluations |
+| Developer tools | create agent, agent inspector, deploy, model playground                       |
 
 - Menu names differ between extension versions; the capabilities stay the same
 
@@ -71,19 +71,19 @@ def ask(openai, agent, question: str) -> str:
 - Older SDK material uses threads, messages, and runs for the same steps
 - Install with `pip install "azure-ai-projects>=2.3.0" azure-identity`; check the version installed
 
-| Why code           | Benefit                                          |
-| ------------------ | ------------------------------------------------ |
-| version control    | instructions and tool code can be diffed and rolled back |
-| CI                 | agent definitions can be validated automatically |
-| reproducibility    | the same agent recreated identically across projects |
+| Why code        | Benefit                                                  |
+| --------------- | -------------------------------------------------------- |
+| version control | instructions and tool code can be diffed and rolled back |
+| CI              | agent definitions can be validated automatically         |
+| reproducibility | the same agent recreated identically across projects     |
 
 ## Method Step 4: scaffold the build
 
-| File                      | Holds                                   |
-| ------------------------- | --------------------------------------- |
+| File                      | Holds                                    |
+| ------------------------- | ---------------------------------------- |
 | `copilot-instructions.md` | project-wide conventions, always applied |
-| `SKILL.md`                | a repeatable multi-step procedure       |
-| custom agent              | a specialised reviewer or builder role  |
+| `SKILL.md`                | a repeatable multi-step procedure        |
+| custom agent              | a specialised reviewer or builder role   |
 
 - Decision rule: conventions go to the instructions file, procedures to a skill, roles to an agent
 - Example skill for Lab 4.1: `../../project/skills/add-agent-tool/SKILL.md`

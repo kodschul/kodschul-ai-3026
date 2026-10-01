@@ -34,7 +34,8 @@ def check_expense_claim(category: str, amount: float, days: int) -> dict:
     raise NotImplementedError("TODO 2")
 
 
-HANDLERS = {"count_words": count_words, "check_expense_claim": check_expense_claim}
+HANDLERS = {"count_words": count_words,
+            "check_expense_claim": check_expense_claim}
 
 
 def build_tools() -> list[FunctionTool]:
@@ -49,14 +50,16 @@ def create_agent(project: AIProjectClient, vector_store_id: str):
         definition=PromptAgentDefinition(
             model=MODEL,
             instructions=TOOL_INSTRUCTIONS,
-            tools=[FileSearchTool(vector_store_ids=[vector_store_id]), *build_tools()],
+            tools=[FileSearchTool(
+                vector_store_ids=[vector_store_id]), *build_tools()],
         ),
     )
 
 
 def ask_with_tools(openai, agent, question: str) -> str:
     """Provided: send a question, run requested function calls, return the final answer."""
-    agent_ref = {"agent_reference": {"name": agent.name, "type": "agent_reference"}}
+    agent_ref = {"agent_reference": {
+        "name": agent.name, "type": "agent_reference"}}
     response = openai.responses.create(input=question, extra_body=agent_ref)
     while True:
         outputs = []
@@ -82,8 +85,10 @@ def ask_with_tools(openai, agent, question: str) -> str:
 
 
 def main() -> None:
-    question = " ".join(sys.argv[1:]) or "Will a hotel claim of 220 EUR for 1 night be approved?"
-    project = AIProjectClient(endpoint=ENDPOINT, credential=DefaultAzureCredential())
+    question = " ".join(
+        sys.argv[1:]) or "Will a hotel claim of 220 EUR for 1 night be approved?"
+    project = AIProjectClient(
+        endpoint=ENDPOINT, credential=DefaultAzureCredential())
     openai = project.get_openai_client()
     agent = create_agent(project, upload_policy(openai))
     print(f"Agent: {agent.name} (version {agent.version})")

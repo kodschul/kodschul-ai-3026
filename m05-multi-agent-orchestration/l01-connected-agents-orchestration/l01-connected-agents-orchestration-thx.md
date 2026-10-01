@@ -32,21 +32,21 @@ Sequential, concurrent, group chat, handoff, and Magentic.
 
 ## Why one agent stops scaling
 
-| Problem                  | Effect                                                    |
-| ------------------------ | --------------------------------------------------------- |
-| too many tools           | the model picks the wrong tool, or none                   |
-| conflicting instructions | advising freely and deciding strictly in one prompt       |
-| no trust boundary        | the agent that chats can also approve                     |
+| Problem                  | Effect                                              |
+| ------------------------ | --------------------------------------------------- |
+| too many tools           | the model picks the wrong tool, or none             |
+| conflicting instructions | advising freely and deciding strictly in one prompt |
+| no trust boundary        | the agent that chats can also approve               |
 
 ## Orchestration patterns
 
-| Pattern    | Meaning                                                      | Fits when                                  |
-| ---------- | ------------------------------------------------------------ | ------------------------------------------ |
-| Sequential | one agent's output feeds directly into the next              | fixed pipeline of dependent steps          |
-| Concurrent | several agents work in parallel, results combined            | independent analyses of the same input     |
-| Group chat | several agents and a user converse together                  | review and discussion until agreement      |
-| Handoff    | one agent explicitly transfers based on content; TravelDesk uses this | a specialist must take over       |
-| Magentic   | open-ended, dynamically planned process                      | steps are not known in advance             |
+| Pattern    | Meaning                                                               | Fits when                              |
+| ---------- | --------------------------------------------------------------------- | -------------------------------------- |
+| Sequential | one agent's output feeds directly into the next                       | fixed pipeline of dependent steps      |
+| Concurrent | several agents work in parallel, results combined                     | independent analyses of the same input |
+| Group chat | several agents and a user converse together                           | review and discussion until agreement  |
+| Handoff    | one agent explicitly transfers based on content; TravelDesk uses this | a specialist must take over            |
+| Magentic   | open-ended, dynamically planned process                               | steps are not known in advance         |
 
 ## TravelDesk after the split
 
@@ -58,10 +58,10 @@ Employee → Policy Agent → Approval Agent → Decision and reason
              no authority)    decision)
 ```
 
-| Agent          | Owns                                              | Does not own                              |
-| -------------- | ------------------------------------------------- | ----------------------------------------- |
-| Policy Agent   | grounded document, citation-based answers         | the expense tool, any approval authority  |
-| Approval Agent | `check_expense_claim`, the decision               | free-form policy question answering       |
+| Agent          | Owns                                      | Does not own                             |
+| -------------- | ----------------------------------------- | ---------------------------------------- |
+| Policy Agent   | grounded document, citation-based answers | the expense tool, any approval authority |
+| Approval Agent | `check_expense_claim`, the decision       | free-form policy question answering      |
 
 - The handoff in this course is implemented in code: the Policy Agent ends its answer with one
   `HANDOFF:` line and the application passes the claim to the Approval Agent
@@ -70,11 +70,11 @@ Employee → Policy Agent → Approval Agent → Decision and reason
 
 ## What every extra agent costs
 
-| Cost            | Reason                                        |
-| --------------- | --------------------------------------------- |
-| Latency         | every handoff is another model call           |
-| Tokens          | context is repeated for each agent            |
-| Debugging surface | a wrong answer can start in any agent       |
+| Cost              | Reason                                |
+| ----------------- | ------------------------------------- |
+| Latency           | every handoff is another model call   |
+| Tokens            | context is repeated for each agent    |
+| Debugging surface | a wrong answer can start in any agent |
 
 - Background segments: `../01-agent-framework.md`, `../02-workflows-power-fx.md`
 

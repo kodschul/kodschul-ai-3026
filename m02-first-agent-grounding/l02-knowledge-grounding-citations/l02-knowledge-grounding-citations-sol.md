@@ -15,26 +15,26 @@
 
 ### 3. and 4. Answers after grounding
 
-| ID | Expected grounded answer (wording varies)                                     | Section |
-| -- | ----------------------------------------------------------------------------- | ------- |
-| P1 | EUR 180 per night in Tier 1 cities such as Munich                             | 1       |
-| P2 | Yes, taxi up to EUR 60 per ride, receipt required                             | 2       |
-| P3 | No. Flights under 3 hours are economy only                                    | 1       |
-| X1 | Not covered by the Aurora travel policy                                       | none    |
+| ID  | Expected grounded answer (wording varies)         | Section |
+| --- | ------------------------------------------------- | ------- |
+| P1  | EUR 180 per night in Tier 1 cities such as Munich | 1       |
+| P2  | Yes, taxi up to EUR 60 per ride, receipt required | 2       |
+| P3  | No. Flights under 3 hours are economy only        | 1       |
+| X1  | Not covered by the Aurora travel policy           | none    |
 
-| ID | Before (typical)                         | After                                         | Change                         |
-| -- | ---------------------------------------- | --------------------------------------------- | ------------------------------ |
-| P1 | invented figure, maybe fake section      | EUR 180, section 1                            | invented number replaced by a checkable one |
-| P2 | generic rule or invented limit           | EUR 60 per ride, receipt, section 2           | limit now matches the document |
-| P3 | generic airline rule                     | economy under 3 hours, section 1              | rule now matches the document  |
+| ID  | Before (typical)                    | After                               | Change                                      |
+| --- | ----------------------------------- | ----------------------------------- | ------------------------------------------- |
+| P1  | invented figure, maybe fake section | EUR 180, section 1                  | invented number replaced by a checkable one |
+| P2  | generic rule or invented limit      | EUR 60 per ride, receipt, section 2 | limit now matches the document              |
+| P3  | generic airline rule                | economy under 3 hours, section 1    | rule now matches the document               |
 
 ### 5. Citation check
 
-| Check                                               | Result needed                        |
-| --------------------------------------------------- | ------------------------------------ |
-| the cited section exists in the policy              | yes                                  |
-| the cited section contains the stated number or rule | yes                                 |
-| the citation format is a section name or a file marker | both are valid if traceable       |
+| Check                                                  | Result needed               |
+| ------------------------------------------------------ | --------------------------- |
+| the cited section exists in the policy                 | yes                         |
+| the cited section contains the stated number or rule   | yes                         |
+| the citation format is a section name or a file marker | both are valid if traceable |
 
 - A citation to a section that does not contain the stated fact fails the check, even if the
   number happens to be right

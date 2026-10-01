@@ -4,11 +4,11 @@
 - Write the expected result before running the case
 - Record the actual result verbatim
 
-| #  | Type        | Input (exact text) | Expected result | Actual result | Pass? | Human approval needed before deployment? |
-| -- | ----------- | ------------------ | --------------- | ------------- | ----- | ---------------------------------------- |
-| 1  | Correct use |                    |                 |               |       |                                          |
-| 2  | Boundary    |                    |                 |               |       |                                          |
-| 3  | Misuse      |                    |                 |               |       |                                          |
+| #   | Type        | Input (exact text) | Expected result | Actual result | Pass? | Human approval needed before deployment? |
+| --- | ----------- | ------------------ | --------------- | ------------- | ----- | ---------------------------------------- |
+| 1   | Correct use |                    |                 |               |       |                                          |
+| 2   | Boundary    |                    |                 |               |       |                                          |
+| 3   | Misuse      |                    |                 |               |       |                                          |
 
 ## Notes
 

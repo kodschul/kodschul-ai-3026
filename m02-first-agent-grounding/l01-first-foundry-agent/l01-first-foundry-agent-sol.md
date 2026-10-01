@@ -8,13 +8,13 @@
 - Message, for example: "What is an AI agent?"
 - Where each object appears:
 
-| Object           | Where it shows up                                          |
-| ---------------- | ---------------------------------------------------------- |
-| Project          | the Foundry project that was opened                        |
-| Model deployment | the model selected for the agent                           |
-| Agent            | the name and instructions entered                          |
-| Conversation     | the chat session in the playground                         |
-| Response         | the answer to the message; visible in the trace            |
+| Object           | Where it shows up                               |
+| ---------------- | ----------------------------------------------- |
+| Project          | the Foundry project that was opened             |
+| Model deployment | the model selected for the agent                |
+| Agent            | the name and instructions entered               |
+| Conversation     | the chat session in the playground              |
+| Response         | the answer to the message; visible in the trace |
 
 ### 2. TravelDesk agent
 
@@ -25,8 +25,8 @@
 
 Answer text varies between runs, so no verbatim answer is prescribed. Typical patterns:
 
-| Question | Typical result without the policy                                                    |
-| -------- | ------------------------------------------------------------------------------------ |
+| Question              | Typical result without the policy                                           |
+| --------------------- | --------------------------------------------------------------------------- |
 | P1 hotel limit Munich | a confident EUR figure that is not Aurora's, often with an invented section |
 | P2 taxi               | "yes, with receipt", possibly with an invented limit                        |
 | P3 business class     | a generic airline rule, possibly with an invented section                   |
@@ -35,11 +35,11 @@ Answer text varies between runs, so no verbatim answer is prescribed. Typical pa
 
 ### 5. Mark confident inventions
 
-| Label                  | Meaning                                              |
-| ---------------------- | ---------------------------------------------------- |
-| verifiable             | claim can be traced to the Aurora policy             |
-| unverifiable specific  | a number, limit, or section that cannot be traced    |
-| refused / not covered  | agent says it cannot answer from the policy          |
+| Label                 | Meaning                                           |
+| --------------------- | ------------------------------------------------- |
+| verifiable            | claim can be traced to the Aurora policy          |
+| unverifiable specific | a number, limit, or section that cannot be traced |
+| refused / not covered | agent says it cannot answer from the policy       |
 
 - Without the policy attached, no specific Aurora number can be verifiable; any such number is
   an invention

@@ -33,12 +33,12 @@ The run trace shows a tool-call step with the arguments, followed by the result.
 
 ## Tool options in Foundry
 
-| Option          | Meaning                                                       |
-| --------------- | ------------------------------------------------------------- |
-| Built-in tools  | web search, file search, code interpreter, memory             |
-| Custom function | own code, called by the model; built in this lab              |
-| OpenAPI tool    | describe an existing REST API; the agent calls it             |
-| MCP server      | tools discovered from a separate server; built in Lab 4.2     |
+| Option          | Meaning                                                   |
+| --------------- | --------------------------------------------------------- |
+| Built-in tools  | web search, file search, code interpreter, memory         |
+| Custom function | own code, called by the model; built in this lab          |
+| OpenAPI tool    | describe an existing REST API; the agent calls it         |
+| MCP server      | tools discovered from a separate server; built in Lab 4.2 |
 
 - Function tools are defined through the SDK; the portal does not add function definitions
   (version-sensitive; verify in the current portal)
@@ -63,36 +63,43 @@ def check_expense_claim(category: str, amount: float, days: int) -> dict:
     """
 ```
 
-| Tool definition field | Source                                           |
-| --------------------- | ------------------------------------------------ |
-| `name`                | the function name                                |
-| `description`         | the docstring: when to call the tool             |
+| Tool definition field | Source                                                     |
+| --------------------- | ---------------------------------------------------------- |
+| `name`                | the function name                                          |
+| `description`         | the docstring: when to call the tool                       |
 | `parameters`          | JSON Schema: types, required fields, fixed values (`enum`) |
-| `strict`              | `True` forces the arguments to match the schema  |
+| `strict`              | `True` forces the arguments to match the schema            |
 
 ## Reading the run trace
 
 ```json
-{"type": "tool_call", "name": "check_expense_claim",
- "arguments": {"category": "hotel", "amount": 220, "days": 1}}
+{
+  "type": "tool_call",
+  "name": "check_expense_claim",
+  "arguments": { "category": "hotel", "amount": 220, "days": 1 }
+}
 ```
 
 Result returned to the model:
 
 ```json
-{"approved": false, "requires_manager": false, "requires_finance": false,
- "reason": "Exceeds nightly limit of 180"}
+{
+  "approved": false,
+  "requires_manager": false,
+  "requires_finance": false,
+  "reason": "Exceeds nightly limit of 180"
+}
 ```
 
 - Trace shape differs between portal and SDK; the pattern is call, arguments, result
 
 ## Three ways a tool call fails
 
-| Failure         | Symptom in the trace                                   | First fix                       |
-| --------------- | ------------------------------------------------------ | ------------------------------- |
-| Never called    | no tool-call step; answer from general knowledge       | sharpen the docstring           |
-| Wrong arguments | arguments do not match the question                    | tighten the parameter schema    |
-| Silent nonsense | call succeeds, value contradicts the input             | test the function on its own    |
+| Failure         | Symptom in the trace                             | First fix                    |
+| --------------- | ------------------------------------------------ | ---------------------------- |
+| Never called    | no tool-call step; answer from general knowledge | sharpen the docstring        |
+| Wrong arguments | arguments do not match the question              | tighten the parameter schema |
+| Silent nonsense | call succeeds, value contradicts the input       | test the function on its own |
 
 > **Rule of thumb:** The docstring is the contract; the model never sees the function body.
 

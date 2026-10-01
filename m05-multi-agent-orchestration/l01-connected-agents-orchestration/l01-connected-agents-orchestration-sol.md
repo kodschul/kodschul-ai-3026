@@ -6,13 +6,13 @@ Static review only: not executed. Model output varies; the structure of the resu
 
 ### 1. Pattern matching
 
-| #  | Pattern          | Reason                                                       |
-| -- | ---------------- | ------------------------------------------------------------ |
-| A1 | Sequential       | each step needs the previous output                          |
-| A2 | Concurrent       | independent analyses run in parallel, results are combined   |
-| A3 | Group chat       | several roles converse with the user until agreement         |
-| A4 | Handoff          | control passes to a specialist based on content              |
-| A5 | Single agent     | one document, one task: a second agent adds cost, no benefit |
+| #   | Pattern      | Reason                                                       |
+| --- | ------------ | ------------------------------------------------------------ |
+| A1  | Sequential   | each step needs the previous output                          |
+| A2  | Concurrent   | independent analyses run in parallel, results are combined   |
+| A3  | Group chat   | several roles converse with the user until agreement         |
+| A4  | Handoff      | control passes to a specialist based on content              |
+| A5  | Single agent | one document, one task: a second agent adds cost, no benefit |
 
 - Magentic fits open-ended work whose steps are not known in advance; none of A1 to A5 is that
 
@@ -91,11 +91,11 @@ def handle(openai, policy_agent, approval_agent, question: str) -> str:
 
 ### 5. End-to-end run
 
-| Stage          | Expected content                                                              |
-| -------------- | ----------------------------------------------------------------------------- |
+| Stage          | Expected content                                                                                |
+| -------------- | ----------------------------------------------------------------------------------------------- |
 | Policy Agent   | hotel limit EUR 180 per night in Tier 1 [section 1]; manager approval above EUR 500 [section 4] |
-| Log            | `[handoff] policy -> approval: {'category': 'hotel', 'amount': 540, 'days': 3}` |
-| Approval Agent | tool call, then: valid against the rules, manager approval required, a person approves |
+| Log            | `[handoff] policy -> approval: {'category': 'hotel', 'amount': 540, 'days': 3}`                 |
+| Approval Agent | tool call, then: valid against the rules, manager approval required, a person approves          |
 
 ### 6. Justification (example)
 
@@ -109,7 +109,7 @@ def handle(openai, policy_agent, approval_agent, question: str) -> str:
 
 ## Extension
 
-| Case                       | Result                                                            |
-| -------------------------- | ----------------------------------------------------------------- |
-| pure policy question       | no `HANDOFF:` line, only the Policy Agent answers                 |
-| amount missing             | the Policy Agent asks for the amount; no handoff                  |
+| Case                 | Result                                            |
+| -------------------- | ------------------------------------------------- |
+| pure policy question | no `HANDOFF:` line, only the Policy Agent answers |
+| amount missing       | the Policy Agent asks for the amount; no handoff  |

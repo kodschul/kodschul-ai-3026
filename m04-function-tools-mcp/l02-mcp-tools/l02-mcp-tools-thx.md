@@ -50,18 +50,18 @@ Whoever owns the trust boundary for that capability. It is a separate review, no
 
 ## Local function tool versus MCP tool
 
-| Aspect      | Local function tool                  | MCP tool                                   |
-| ----------- | ------------------------------------ | ------------------------------------------ |
-| Location    | the agent's own codebase             | a separately owned server                  |
-| Change      | changes with the agent's release     | can change independently                   |
-| Review      | reviewed as part of the agent        | needs its own explicit review              |
-| Versioning  | versioned with the agent             | versioned separately                       |
+| Aspect     | Local function tool              | MCP tool                      |
+| ---------- | -------------------------------- | ----------------------------- |
+| Location   | the agent's own codebase         | a separately owned server     |
+| Change     | changes with the agent's release | can change independently      |
+| Review     | reviewed as part of the agent    | needs its own explicit review |
+| Versioning | versioned with the agent         | versioned separately          |
 
-| Question                       | Decision rule                                                  |
-| ------------------------------ | -------------------------------------------------------------- |
-| shared by several agents/teams | MCP server                                                     |
-| specific to one agent          | local function                                                 |
-| changes must ship with the agent | local function                                               |
+| Question                         | Decision rule  |
+| -------------------------------- | -------------- |
+| shared by several agents/teams   | MCP server     |
+| specific to one agent            | local function |
+| changes must ship with the agent | local function |
 
 > **Rule of thumb:** When a shared MCP server changes, every agent that uses it changes with it.
 

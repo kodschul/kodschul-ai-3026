@@ -5,21 +5,21 @@
 
 ## AI, machine learning, deep learning, LLM
 
-| Term                    | Meaning                                                              |
-| ----------------------- | -------------------------------------------------------------------- |
-| Artificial intelligence | machines doing tasks that normally need human intelligence           |
-| Machine learning        | learns patterns from data instead of hand-written rules              |
-| Deep learning           | many-layered neural networks, a branch of machine learning           |
+| Term                    | Meaning                                                                           |
+| ----------------------- | --------------------------------------------------------------------------------- |
+| Artificial intelligence | machines doing tasks that normally need human intelligence                        |
+| Machine learning        | learns patterns from data instead of hand-written rules                           |
+| Deep learning           | many-layered neural networks, a branch of machine learning                        |
 | LLM                     | deep network trained on huge amounts of text; basis of Copilot and Foundry models |
 
 ## How AI learns
 
-| Term              | Meaning                                                                      |
-| ----------------- | ---------------------------------------------------------------------------- |
-| Training          | model reads huge data once and adjusts internal numbers; weeks, very expensive |
-| Inference         | finished model is applied to a prompt on every use; nothing new is learned   |
-| Learning task     | a language model learns one thing: predict the most likely next token        |
-| Feedback          | human feedback afterwards teaches it to be helpful and safe                  |
+| Term          | Meaning                                                                        |
+| ------------- | ------------------------------------------------------------------------------ |
+| Training      | model reads huge data once and adjusts internal numbers; weeks, very expensive |
+| Inference     | finished model is applied to a prompt on every use; nothing new is learned     |
+| Learning task | a language model learns one thing: predict the most likely next token          |
+| Feedback      | human feedback afterwards teaches it to be helpful and safe                    |
 
 - Training data → training → model (parameters)
 - A model is not a database of texts; it is a file of numbers that encode learned patterns
@@ -45,12 +45,12 @@ Tokens (illustrative): Aurora | Logistics | reimburse | s | taxi | rides | up | 
 
 ## Settings and limits
 
-| Setting        | Effect                                                                  |
-| -------------- | ----------------------------------------------------------------------- |
-| Temperature    | low: predictable and repeatable; high: more varied and creative         |
-| Top-p          | limits the choice to the most probable tokens that add up to p          |
-| Max tokens     | caps the length of the answer                                           |
-| Context window | how much text (instructions, history, answer) fits into one request     |
+| Setting        | Effect                                                              |
+| -------------- | ------------------------------------------------------------------- |
+| Temperature    | low: predictable and repeatable; high: more varied and creative     |
+| Top-p          | limits the choice to the most probable tokens that add up to p      |
+| Max tokens     | caps the length of the answer                                       |
+| Context window | how much text (instructions, history, answer) fits into one request |
 
 - Low temperature: right for policy answers and tool calls
 - High temperature: right for brainstorming, wrong for rules
@@ -71,19 +71,19 @@ Prompt → tokens → vectors → most likely next token → repeat → answer t
 - Missing context activates the wrong patterns: fluent, generic, or invented answers
 - Agent instructions are a prompt sent with every request
 
-| Weak                     | Strong                                                                          |
-| ------------------------ | ------------------------------------------------------------------------------- |
-| "Can I expense a taxi?"  | role, situation, format, citation requirement, and a fallback when not covered  |
+| Weak                    | Strong                                                                         |
+| ----------------------- | ------------------------------------------------------------------------------ |
+| "Can I expense a taxi?" | role, situation, format, citation requirement, and a fallback when not covered |
 
 ## Top prompting techniques
 
-| Technique              | Meaning                                                              |
-| ---------------------- | -------------------------------------------------------------------- |
-| Role                   | say who the model is and who it talks to                             |
-| Context                | give the facts it cannot know: situation, data, audience             |
-| Task and format        | state the one task and the answer shape: bullets, table, length      |
-| Examples               | one or two sample answers (few-shot); examples steer better than adjectives |
-| Constraints, fallback  | name limits and what to do when unsure: "say not covered, never guess" |
+| Technique             | Meaning                                                                     |
+| --------------------- | --------------------------------------------------------------------------- |
+| Role                  | say who the model is and who it talks to                                    |
+| Context               | give the facts it cannot know: situation, data, audience                    |
+| Task and format       | state the one task and the answer shape: bullets, table, length             |
+| Examples              | one or two sample answers (few-shot); examples steer better than adjectives |
+| Constraints, fallback | name limits and what to do when unsure: "say not covered, never guess"      |
 
 ```text
 ROLE        You are the travel-policy assistant of Aurora Logistics.
@@ -97,12 +97,12 @@ CONSTRAINT  If the policy does not cover it, say "not covered". Never guess.
 
 ## From model to agent
 
-| Term         | Meaning                                                                 |
-| ------------ | ----------------------------------------------------------------------- |
-| Model        | predicts the next token; alone: no memory, no tools, no goal            |
-| Prompt       | the request written each time                                           |
-| Instructions | a prompt always sent first: role, rules, boundaries                     |
-| Tools        | functions, data sources, or other agents the model can call             |
+| Term         | Meaning                                                                   |
+| ------------ | ------------------------------------------------------------------------- |
+| Model        | predicts the next token; alone: no memory, no tools, no goal              |
+| Prompt       | the request written each time                                             |
+| Instructions | a prompt always sent first: role, rules, boundaries                       |
+| Tools        | functions, data sources, or other agents the model can call               |
 | Agent        | model with instructions and tools in a loop: decide, act, observe, repeat |
 
 > **Rule of thumb:** Better context, better instructions, better agent.

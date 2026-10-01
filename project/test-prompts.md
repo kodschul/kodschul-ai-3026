@@ -6,23 +6,23 @@
 
 ## The three policy questions
 
-| ID | Prompt                                                                                    |
-| -- | ----------------------------------------------------------------------------------------- |
-| P1 | What is the hotel limit per night in Munich?                                              |
-| P2 | I took a taxi from the airport to a client visit. Can I expense it?                       |
-| P3 | Can I book business class for a 2-hour domestic flight?                                   |
+| ID  | Prompt                                                              |
+| --- | ------------------------------------------------------------------- |
+| P1  | What is the hotel limit per night in Munich?                        |
+| P2  | I took a taxi from the airport to a client visit. Can I expense it? |
+| P3  | Can I book business class for a 2-hour domestic flight?             |
 
 ## The out-of-policy question (Lab 2.2)
 
-| ID | Prompt                                                       |
-| -- | ------------------------------------------------------------ |
-| X1 | Does Aurora reimburse the minibar in my hotel room?          |
+| ID  | Prompt                                              |
+| --- | --------------------------------------------------- |
+| X1  | Does Aurora reimburse the minibar in my hotel room? |
 
 ## Recording template
 
-| ID | Answer text (verbatim) | Cites a section? | Invented Aurora detail? |
-| -- | ---------------------- | ---------------- | ------------------------ |
-| P1 |                        |                  |                          |
-| P2 |                        |                  |                          |
-| P3 |                        |                  |                          |
-| X1 |                        |                  |                          |
+| ID  | Answer text (verbatim) | Cites a section? | Invented Aurora detail? |
+| --- | ---------------------- | ---------------- | ----------------------- |
+| P1  |                        |                  |                         |
+| P2  |                        |                  |                         |
+| P3  |                        |                  |                         |
+| X1  |                        |                  |                         |

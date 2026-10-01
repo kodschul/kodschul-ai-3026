@@ -33,10 +33,10 @@ evidence.
 
 ## Same question, two answers
 
-| Question: "What is the hotel limit in Munich?" | Result                                                      |
-| ----------------------------------------------- | ----------------------------------------------------------- |
-| Without grounding                               | "Typically up to about EUR 150 per night": fluent, confident, invented |
-| With grounding and citation                     | "EUR 180 per night in Tier 1 cities such as Munich. [Aurora policy, section 1]" |
+| Question: "What is the hotel limit in Munich?" | Result                                                                          |
+| ---------------------------------------------- | ------------------------------------------------------------------------------- |
+| Without grounding                              | "Typically up to about EUR 150 per night": fluent, confident, invented          |
+| With grounding and citation                    | "EUR 180 per night in Tier 1 cities such as Munich. [Aurora policy, section 1]" |
 
 - The grounded answer is checkable against the document
 
@@ -50,11 +50,11 @@ evidence.
 
 ## Rules for citations
 
-| Rule                                      | Reason                                                       |
-| ----------------------------------------- | ------------------------------------------------------------ |
-| check every citation against the source   | a model can cite a section that does not exist               |
-| the agent says "not covered" when the document is silent | otherwise it guesses and sounds sure          |
-| one owner per source document             | policy changes must reach the agent                          |
+| Rule                                                     | Reason                                         |
+| -------------------------------------------------------- | ---------------------------------------------- |
+| check every citation against the source                  | a model can cite a section that does not exist |
+| the agent says "not covered" when the document is silent | otherwise it guesses and sounds sure           |
+| one owner per source document                            | policy changes must reach the agent            |
 
 > **Rule of thumb:** A citation that cannot be traced to a real passage is not evidence.
 

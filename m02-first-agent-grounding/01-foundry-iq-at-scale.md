@@ -6,13 +6,13 @@
 
 ## Per-agent files versus a shared knowledge platform
 
-| Aspect              | Per-agent files (today)                  | Shared knowledge platform (Foundry IQ)            |
-| ------------------- | ---------------------------------------- | ------------------------------------------------- |
-| Where knowledge lives | each agent attaches its own copy       | several agents share governed sources and retrieval |
-| Fits when           | one agent and one document               | many agents, many sources, several owners         |
-| Risk                | copies drift apart                       | misconfigured shared source affects every agent   |
-| Fixing and auditing | per agent                                | one place to fix and audit                        |
-| Citation quality    | agent-level concern                      | platform-level concern                            |
+| Aspect                | Per-agent files (today)          | Shared knowledge platform (Foundry IQ)              |
+| --------------------- | -------------------------------- | --------------------------------------------------- |
+| Where knowledge lives | each agent attaches its own copy | several agents share governed sources and retrieval |
+| Fits when             | one agent and one document       | many agents, many sources, several owners           |
+| Risk                  | copies drift apart               | misconfigured shared source affects every agent     |
+| Fixing and auditing   | per agent                        | one place to fix and audit                          |
+| Citation quality      | agent-level concern              | platform-level concern                              |
 
 ## What changes at scale
 

@@ -35,11 +35,11 @@ governance and licensing, and how far it carries before a migration.
 
 ## What an agent is
 
-| Part         | Role                                                          |
-| ------------ | ------------------------------------------------------------- |
-| Model        | decides, token by token, what to say or do next               |
-| Instructions | define role, scope, and boundaries                            |
-| Tools        | functions, data sources, or other agents the model can call   |
+| Part         | Role                                                            |
+| ------------ | --------------------------------------------------------------- |
+| Model        | decides, token by token, what to say or do next                 |
+| Instructions | define role, scope, and boundaries                              |
+| Tools        | functions, data sources, or other agents the model can call     |
 | Loop         | answers directly, or calls a tool and continues with the result |
 
 The agent loop:
@@ -51,71 +51,71 @@ The agent loop:
 
 ## Script, workflow, or agent
 
-|          | Script                       | Workflow                          | Agent                               |
-| -------- | ---------------------------- | --------------------------------- | ----------------------------------- |
-| Decides  | developer, in code           | developer fixes the path, AI fills a step | the model picks the next step |
-| Example  | nightly CSV transformation   | summarise, classify, file         | gather info, choose a resource, act |
-| Strength | predictable, cheap, testable | readable, controlled              | flexible                            |
-| Cost     | low                          | medium                            | highest, hardest to test            |
+|          | Script                       | Workflow                                  | Agent                               |
+| -------- | ---------------------------- | ----------------------------------------- | ----------------------------------- |
+| Decides  | developer, in code           | developer fixes the path, AI fills a step | the model picks the next step       |
+| Example  | nightly CSV transformation   | summarise, classify, file                 | gather info, choose a resource, act |
+| Strength | predictable, cheap, testable | readable, controlled                      | flexible                            |
+| Cost     | low                          | medium                                    | highest, hardest to test            |
 
 - An agent costs more than a single prompt: slower, less predictable, harder to test
 - The instructions field is a product, not a setting (see method Step 0)
 
 ## The Microsoft agent landscape
 
-| Layer              | What lives here                                                           |
-| ------------------ | ------------------------------------------------------------------------- |
-| Where users meet it | Teams, Microsoft 365 Copilot, a custom app or API                        |
-| Where it is built  | Copilot Studio (low-code), Foundry Agent Service, Microsoft Agent Framework (code) |
-| Microsoft Foundry  | model catalog, tools and knowledge, tracing and evaluation, identity and governance |
-| Azure              | compute, networking, storage, Microsoft Entra                             |
+| Layer               | What lives here                                                                     |
+| ------------------- | ----------------------------------------------------------------------------------- |
+| Where users meet it | Teams, Microsoft 365 Copilot, a custom app or API                                   |
+| Where it is built   | Copilot Studio (low-code), Foundry Agent Service, Microsoft Agent Framework (code)  |
+| Microsoft Foundry   | model catalog, tools and knowledge, tracing and evaluation, identity and governance |
+| Azure               | compute, networking, storage, Microsoft Entra                                       |
 
 - Microsoft Foundry: agents (prompt, voice, hosted), a catalog of 10,000+ models, tools and
   knowledge through a Foundry Toolbox
 - Older material uses older names; check the version that is installed
 
-| Older material says                 | Current Foundry says              |
-| ----------------------------------- | --------------------------------- |
-| Azure AI Studio, Azure AI Foundry   | Microsoft Foundry                 |
-| Azure AI Services                   | Foundry Tools                     |
-| Assistants API                      | Responses API (Agents v2)         |
-| Threads, messages, runs             | Conversations, items, responses   |
+| Older material says               | Current Foundry says            |
+| --------------------------------- | ------------------------------- |
+| Azure AI Studio, Azure AI Foundry | Microsoft Foundry               |
+| Azure AI Services                 | Foundry Tools                   |
+| Assistants API                    | Responses API (Agents v2)       |
+| Threads, messages, runs           | Conversations, items, responses |
 
 ## Foundry Agent Service
 
-| Capability          | Meaning                                                              |
-| ------------------- | -------------------------------------------------------------------- |
-| Agent runtime       | hosts and scales agents, manages conversations and tool calls        |
-| Toolboxes           | curated tools shared across agents behind one governed endpoint      |
-| Models              | swap models without changing agent code                              |
-| Observability       | tracing, metrics, and evaluations for every decision                 |
-| Identity, security  | Microsoft Entra identity, RBAC, content filters, network isolation   |
-| Publishing          | versions, stable endpoints, sharing through Teams and Copilot        |
+| Capability         | Meaning                                                            |
+| ------------------ | ------------------------------------------------------------------ |
+| Agent runtime      | hosts and scales agents, manages conversations and tool calls      |
+| Toolboxes          | curated tools shared across agents behind one governed endpoint    |
+| Models             | swap models without changing agent code                            |
+| Observability      | tracing, metrics, and evaluations for every decision               |
+| Identity, security | Microsoft Entra identity, RBAC, content filters, network isolation |
+| Publishing         | versions, stable endpoints, sharing through Teams and Copilot      |
 
-| Object       | Meaning                                                                     |
-| ------------ | --------------------------------------------------------------------------- |
+| Object       | Meaning                                                                        |
+| ------------ | ------------------------------------------------------------------------------ |
 | Agent        | instructions, a model, optional tools; defined once, reused every conversation |
-| Conversation | ordered messages of one exchange (older term: thread)                       |
-| Response     | one execution of the agent on the conversation (older term: run)            |
+| Conversation | ordered messages of one exchange (older term: thread)                          |
+| Response     | one execution of the agent on the conversation (older term: run)               |
 
-| Way to build  | Meaning                                                  |
-| ------------- | -------------------------------------------------------- |
+| Way to build  | Meaning                                                                          |
+| ------------- | -------------------------------------------------------------------------------- |
 | Prompt agent  | instructions, model, tools; Foundry runs it; portal, SDK, or REST; today's focus |
-| Hosted agent  | own code and framework as a container; managed endpoint and identity |
-| Responses API | agent logic lives in the own app; Foundry supplies models and tools |
+| Hosted agent  | own code and framework as a container; managed endpoint and identity             |
+| Responses API | agent logic lives in the own app; Foundry supplies models and tools              |
 
 - The agent playground shows: Instructions, Tools and Knowledge, Chat/YAML/Code views,
   and Traces, Monitor, Evaluation for checking behavior
 
 ## Azure options for building an agent
 
-| Option                | Choose it when                                                | Trade-off                  |
-| --------------------- | ------------------------------------------------------------- | -------------------------- |
-| Foundry Agent Service | developers need a managed agent with portal and SDK           | less control of infrastructure |
-| Agent Framework       | code-first orchestration across several agents is required    | more code to own           |
-| Copilot Studio        | business makers build and maintain it, low-code               | less control of internals  |
-| Microsoft 365 Agents  | the agent must live where users work (Teams, Copilot)         | publishing limits          |
-| Direct model API      | full control over every request is required                   | everything must be built   |
+| Option                | Choose it when                                             | Trade-off                      |
+| --------------------- | ---------------------------------------------------------- | ------------------------------ |
+| Foundry Agent Service | developers need a managed agent with portal and SDK        | less control of infrastructure |
+| Agent Framework       | code-first orchestration across several agents is required | more code to own               |
+| Copilot Studio        | business makers build and maintain it, low-code            | less control of internals      |
+| Microsoft 365 Agents  | the agent must live where users work (Teams, Copilot)      | publishing limits              |
+| Direct model API      | full control over every request is required                | everything must be built       |
 
 Five decision axes: who builds, how much control, where it runs, governance (identity, data,
 licensing, cost), and how far it carries before a migration.

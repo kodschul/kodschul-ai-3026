@@ -7,18 +7,18 @@
 
 ## Connection values
 
-| Value            | Where it goes                                  |
-| ---------------- | ---------------------------------------------- |
-| Server URL       | `MCP_SERVER_URL` in `.env`                     |
-| Server label     | `aurora_reference` (used in the tool definition) |
-| Authentication   | as announced at the start of the lab           |
+| Value          | Where it goes                                    |
+| -------------- | ------------------------------------------------ |
+| Server URL     | `MCP_SERVER_URL` in `.env`                       |
+| Server label   | `aurora_reference` (used in the tool definition) |
+| Authentication | as announced at the start of the lab             |
 
 ## Tools exposed by the server
 
-| Tool                         | Input                 | Output                                  |
-| ---------------------------- | --------------------- | --------------------------------------- |
-| `get_city_tier(city)`        | city name             | `{"city": "...", "tier": 1 or 2}`       |
-| `get_exchange_rate(currency)`| ISO code, e.g. `CHF`  | `{"currency": "...", "eur_per_unit": ...}` |
+| Tool                          | Input                | Output                                     |
+| ----------------------------- | -------------------- | ------------------------------------------ |
+| `get_city_tier(city)`         | city name            | `{"city": "...", "tier": 1 or 2}`          |
+| `get_exchange_rate(currency)` | ISO code, e.g. `CHF` | `{"currency": "...", "eur_per_unit": ...}` |
 
 ## Behavior to expect
 

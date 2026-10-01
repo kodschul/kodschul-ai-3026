@@ -19,7 +19,8 @@ ENDPOINT = os.environ["FOUNDRY_PROJECT_ENDPOINT"]
 MODEL = os.environ["MODEL_DEPLOYMENT_NAME"]
 AGENT_NAME = "traveldesk-code"
 HERE = Path(__file__).parent
-INSTRUCTIONS = (HERE / "traveldesk-instructions.md").read_text(encoding="utf-8")
+INSTRUCTIONS = (
+    HERE / "traveldesk-instructions.md").read_text(encoding="utf-8")
 POLICY = HERE / "aurora-travel-policy.md"
 
 
@@ -44,8 +45,10 @@ def ask(openai, agent, question: str) -> str:
 
 
 def main() -> None:
-    question = " ".join(sys.argv[1:]) or "What is the hotel limit per night in Munich?"
-    project = AIProjectClient(endpoint=ENDPOINT, credential=DefaultAzureCredential())
+    question = " ".join(
+        sys.argv[1:]) or "What is the hotel limit per night in Munich?"
+    project = AIProjectClient(
+        endpoint=ENDPOINT, credential=DefaultAzureCredential())
     openai = project.get_openai_client()
 
     agent = create_agent(project, upload_policy(openai))
