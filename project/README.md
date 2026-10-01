@@ -22,6 +22,7 @@
 | `test-sheet.md`                          | Lab 6.1            | Test case sheet                                             |
 | `transfer-note.md`                       | Lab 6.2            | Template for the personal transfer note                     |
 | `requirements.txt`, `.env.example`       | Labs 3.1 to 5.1    | Python packages and environment variables                   |
+| `checkpoints/`                           | Labs 4.1 to 6.1    | Completed versions of the starters for recovery             |
 
 ## TravelDesk state after each module
 
